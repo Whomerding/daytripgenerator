@@ -2,16 +2,20 @@ import random
 
 
 def valid_response (str_input):
+    validated_response = str_input
     valid_response=False
-    while valid_response == False:
-        if str_input == "yes" or str_input == "no":
+    while valid_response != True:
+        if str_input == "yes":
             valid_response = True
+            validated_response = "yes"
+        elif str_input == "no":
+            valid_response = True
+            validated_response = "no"
         else:
             valid_response = False
-            str_input = input("That is an invalid response please only type yes or no.")
+            str_input = input ("That is an invalid response please only type yes or no.")     
+    return (validated_response)
 
-user_valid = input("yes or no")
-valid_response (user_valid)
 
 def confirm_your_trip ():
     destination = random_destination_generator ()
@@ -29,7 +33,7 @@ def confirm_your_trip ():
 
 # lists
 
-destination_list = ['art museum', 'park', 'beach', 'mountains', 'history museum']
+destination_list = ['the art museum', 'the park', 'the beach', 'the mountains', 'the history museum']
 
 restaurant_list = ['Italian', 'Mexican', 'German', 'American', 'Asian Fusian', 'Chinese', 'Thai', 'Korean', 'Indian']
 
@@ -59,46 +63,91 @@ def random_entertainment_generator ():
     print (f"While there, you will be enjoying {entertainment}")
     return (entertainment)
 
-    
-def confirm_your_trip ():
-    destination = random_destination_generator ()
-    restaurant = random_restaurant_generator ()
-    transportation = random_transportation_generator ()
-    entertainment = random_entertainment_generator ()
+
+destination = random_destination_generator ()
+restaurant = random_restaurant_generator ()
+transportation = random_transportation_generator ()
+entertainment = random_entertainment_generator ()
+
+user_happy = False
+while user_happy != True:
     user_confirm = input("Are you happy with your trip? yes or no?")
-
-    while user_confirm == "no":
-            
-        confirm_destination = input ("Are you happy with your destination? yes or no?")    
-        if user_confirm == "no":
-            while confirm_destination == "no":
+    user_confirm = valid_response (user_confirm)
+    
+    
+    if user_confirm == "no":
+        
+        confirm_destination = input ("Are you happy with your destination? yes or no?")
+        confirm_destination = valid_response (confirm_destination)
+        if confirm_destination == "yes":
+            confirm_destination = True
+        else:
+            confirm_destination = False
+            while confirm_destination != True:
                 destination = random_destination_generator ()
-                confirm_destination = input ("Are you happy with your destination now? yes or no?")
-        
-            confirm_restaurant = input ("Are you happy with your restaurant selection?yes or no?")
-            while confirm_restaurant == "no":
+                confirm_destination = input("Are you happy with your new destination? yes or no?")
+                confirm_destination = valid_response (confirm_destination)
+                if confirm_destination == "yes":
+                    confirm_destination = True
+                else:
+                    confirm_destination = False
+
+        confirm_restaurant = input ("Are you happy with your restaurant? yes or no?")
+        confirm_restaurant = valid_response (confirm_restaurant)
+        if confirm_restaurant == "yes":
+            confirm_restaurant = True
+        else:
+            confirm_restaurant = False
+            while confirm_restaurant != True:
                 restaurant = random_restaurant_generator ()
-                confirm_restaurant = input ("Are you happy with your restaurant selection now?yes or no?")
+                confirm_restaurant = input("Are you happy with your new restaurant? yes or no?")
+                confirm_restaurant = valid_response (confirm_restaurant)
+                if confirm_restaurant == "yes":
+                    confirm_restaurant = True
+                else:
+                    confirm_restaurant = False
 
-                confirm_transport = input ("Are you happy with your transportation selection?yes or no?")
-            while confirm_transport == "no":
+        confirm_transport = input ("Are you happy with your method of transportation? yes or no?")
+        confirm_transport = valid_response (confirm_transport)
+        if confirm_transport == "yes":
+            confirm_transport = True
+        else:
+            confirm_transport = False
+            while confirm_transport == False:
                 transportation = random_transportation_generator ()
-                confirm_transport = input ("Are you happy with your transportation selection now?yes or no?")
+                confirm_transport = input("Are you happy with your new method of transportation? yes or no?")
+                confirm_transport = valid_response (confirm_transport)
+                if confirm_transport == "yes":
+                    confirm_transport = True
+                else:
+                    confirm_transport = False
 
-                confirm_entertainment = input ("Are you happy with your entertainment selection?yes or no?")
-            while confirm_entertainment == "no":
+        confirm_entertainment = input ("Are you happy with your entertainment? yes or no?")
+        confirm_entertainment = valid_response (confirm_entertainment)
+        if confirm_entertainment == "yes":
+            confirm_entertainment = True
+        else:
+            confirm_entertainment = False
+            while confirm_entertainment == False:
                 entertainment = random_entertainment_generator ()
-                confirm_entertainment = input ("Are you happy with your entertainment selection now?yes or no?")
-        
-            user_confirm = input ("Are you happy with your trip to " + (destination) + " by " + (transportation) + " eating " + (restaurant) + " food and enjoying " + (entertainment)+ "? yes or no?")
-     
-        elif user_confirm == "yes":
-            print (f"Have fun on your trip to {destination} by {transportation} where you will eat delicious {restaurant} food and enjoy {entertainment}!!")
-           
+                confirm_entertainment = input("Are you happy with your new restaurant? yes or no?")
+                confirm_entertainment = valid_response (confirm_entertainment)
+                if confirm_entertainment == "yes":
+                    confirm_entertainment = True
+                else:
+                    confirm_entertainment = False
+                        
+    
+    else:
+        user_happy = True
+        print (f"Have fun on your trip to {destination} by {transportation} where you will eat delicious {restaurant} food and enjoy {entertainment}!!")
 
 
 
-confirm_your_trip ()
+
+
+
+
 
         
         
