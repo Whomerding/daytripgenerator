@@ -81,6 +81,7 @@ while user_happy != True:
         confirm_destination = valid_response (confirm_destination)
         if confirm_destination == "yes":
             confirm_destination = True
+            print ("Perfect! Let's continue.")
         else:
             confirm_destination = False
             while confirm_destination != True:
@@ -89,13 +90,17 @@ while user_happy != True:
                 confirm_destination = valid_response (confirm_destination)
                 if confirm_destination == "yes":
                     confirm_destination = True
+                    print ("Perfect! Let's continue.")
+                    
                 else:
                     confirm_destination = False
+                    
 
         confirm_restaurant = input ("Are you happy with your restaurant? yes or no?")
         confirm_restaurant = valid_response (confirm_restaurant)
         if confirm_restaurant == "yes":
             confirm_restaurant = True
+            print ("Perfect! Let's continue.")
         else:
             confirm_restaurant = False
             while confirm_restaurant != True:
@@ -104,13 +109,16 @@ while user_happy != True:
                 confirm_restaurant = valid_response (confirm_restaurant)
                 if confirm_restaurant == "yes":
                     confirm_restaurant = True
+                    print ("Perfect! Let's continue.")
                 else:
                     confirm_restaurant = False
+                    
 
         confirm_transport = input ("Are you happy with your method of transportation? yes or no?")
         confirm_transport = valid_response (confirm_transport)
         if confirm_transport == "yes":
             confirm_transport = True
+            print ("Perfect! Let's continue.")
         else:
             confirm_transport = False
             while confirm_transport == False:
@@ -119,6 +127,7 @@ while user_happy != True:
                 confirm_transport = valid_response (confirm_transport)
                 if confirm_transport == "yes":
                     confirm_transport = True
+                    print ("Perfect! Let's continue.")
                 else:
                     confirm_transport = False
 
@@ -126,14 +135,16 @@ while user_happy != True:
         confirm_entertainment = valid_response (confirm_entertainment)
         if confirm_entertainment == "yes":
             confirm_entertainment = True
+            print ("Perfect! Let's continue.")
         else:
             confirm_entertainment = False
             while confirm_entertainment == False:
                 entertainment = random_entertainment_generator ()
-                confirm_entertainment = input("Are you happy with your new restaurant? yes or no?")
+                confirm_entertainment = input("Are you happy with your new entertainment? yes or no?")
                 confirm_entertainment = valid_response (confirm_entertainment)
                 if confirm_entertainment == "yes":
                     confirm_entertainment = True
+                    print ("Perfect! Let's continue.")
                 else:
                     confirm_entertainment = False
                         
