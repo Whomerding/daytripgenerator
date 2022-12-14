@@ -17,19 +17,6 @@ def valid_response (str_input):
     return (validated_response)
 
 
-def confirm_your_trip ():
-    destination = random_destination_generator ()
-    restaurant = random_restaurant_generator ()
-    transportation = random_transportation_generator ()
-    entertainment = random_entertainment_generator ()
-    user_confirm = input("Are you happy with your trip? yes or no?")
-
-
-
-
-
-
-
 
 # lists
 
